@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "author": "Volodya Yuzyuk",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-arduino-uno", "id": "uno", "top": 163.22, "left": 16.55, "attrs": {} },
+      { "type": "wokwi-dht22", "id": "dht", "top": 0, "left": 70, "attrs": {} },
+      {
+        "type": "wokwi-lcd1602",
+        "id": "lcd1",
+        "top": 383.83,
+        "left": 334.69,
+        "attrs": { "pins": "i2c" }
+      },
+      { "type": "wokwi-ds1307", "id": "rtc1", "top": 37.03, "left": 449.09, "attrs": {} }
+    ],
+    "connections": [
+      [ "uno:GND.1", "dht:GND", "black", [ "v-20", "*", "v5" ] ],
+      [ "uno:2", "dht:SDA", "green", [ "v-16", "*", "h0" ] ],
+      [ "uno:A5", "lcd1:SCL", "green", [ "v0" ] ],
+      [ "lcd1:SDA", "uno:A4", "#8f4814", [ "h0" ] ],
+      [ "lcd1:VCC", "uno:5V", "red", [ "h0" ] ],
+      [ "dht:VCC", "uno:5V", "red", [ "v32.7", "h-109.56", "v274.84", "h202.8" ] ],
+      [ "lcd1:GND", "uno:GND.2", "black", [ "h0" ] ],
+      [ "rtc1:GND", "uno:GND.1", "black", [ "h-322.89", "v118.05" ] ],
+      [ "rtc1:5V", "uno:5V", "red", [ "h-149.1", "v327.71", "h-132.08" ] ],
+      [ "rtc1:SDA", "uno:7", "gold", [ "h0" ] ],
+      [ "rtc1:SCL", "uno:6", "green", [ "h0" ] ],
+      [ "rtc1:SQW", "uno:8", "orange", [ "h0" ] ]
+    ],
+    "dependencies": {}
+  }
