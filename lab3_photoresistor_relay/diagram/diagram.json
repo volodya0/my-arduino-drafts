@@ -1,0 +1,45 @@
+{
+    "version": 1,
+    "author": "Volodya Yuzyuk",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-arduino-uno", "id": "uno", "top": 163.22, "left": 16.55, "attrs": {} },
+      { "type": "wokwi-dht22", "id": "dht", "top": -92.58, "left": 228.68, "attrs": {} },
+      {
+        "type": "wokwi-lcd1602",
+        "id": "lcd1",
+        "top": 383.83,
+        "left": 334.69,
+        "attrs": { "pins": "i2c" }
+      },
+      { "type": "wokwi-relay-module", "id": "relay1", "top": -82.82, "left": 72.52, "attrs": {} },
+      {
+        "type": "wokwi-photoresistor-sensor",
+        "id": "ldr1",
+        "top": -82.75,
+        "left": -333.57,
+        "attrs": {}
+      }
+    ],
+    "connections": [
+      [ "uno:2", "dht:SDA", "green", [ "v-16", "*", "h0" ] ],
+      [ "uno:A5", "lcd1:SCL", "green", [ "v0" ] ],
+      [ "lcd1:SDA", "uno:A4", "#8f4814", [ "h0" ] ],
+      [ "lcd1:VCC", "uno:5V", "red", [ "h0" ] ],
+      [ "lcd1:GND", "uno:GND.2", "black", [ "h0" ] ],
+      [ "dht:GND", "uno:GND.2", "black", [ "v116.34", "h33.71", "v256.23", "h-117.37" ] ],
+      [ "dht:VCC", "uno:5V", "red", [ "v119.65", "h-240.01", "v276.07", "h173.58" ] ],
+      [ "relay1:VCC", "uno:5V", "red", [ "h-100.26", "v511.61", "h204.98" ] ],
+      [
+        "relay1:GND",
+        "uno:GND.2",
+        "black",
+        [ "h-19.26", "v179.26", "h266.15", "v279.37", "h-132.25" ]
+      ],
+      [ "relay1:IN", "uno:3", "green", [ "h-9.34", "v196.31", "h173.58" ] ],
+      [ "ldr1:VCC", "uno:5V", "red", [ "h100.81", "v539.7", "h240.56" ] ],
+      [ "ldr1:GND", "uno:GND.2", "black", [ "h79.74", "v550.77", "h273.93" ] ],
+      [ "ldr1:AO", "uno:A0", "green", [ "h49.89", "v552.35", "h316.07" ] ]
+    ],
+    "dependencies": {}
+  }
