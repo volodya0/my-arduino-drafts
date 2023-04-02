@@ -1,0 +1,34 @@
+{
+    "version": 1,
+    "author": "Volodya Yuzyuk",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+      {
+        "type": "wokwi-analog-joystick",
+        "id": "joystick1",
+        "top": -44.33,
+        "left": 457.38,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-lcd1602",
+        "id": "lcd2",
+        "top": 250.78,
+        "left": 369.74,
+        "attrs": { "pins": "i2c" }
+      }
+    ],
+    "connections": [
+      [ "lcd2:GND", "uno:GND.2", "black", [ "h0" ] ],
+      [ "lcd2:VCC", "uno:5V", "red", [ "h0" ] ],
+      [ "lcd2:SDA", "uno:A4", "#8f4814", [ "h0" ] ],
+      [ "lcd2:SCL", "uno:A5", "green", [ "h0" ] ],
+      [ "joystick1:VCC", "uno:5V", "red", [ "v158.56", "h-338.14" ] ],
+      [ "joystick1:GND", "uno:GND.3", "black", [ "v149.44", "h-356.01" ] ],
+      [ "joystick1:SEL", "uno:3", "blue", [ "v20.55", "h-240.33", "v-111.78", "h-54.75" ] ],
+      [ "joystick1:VERT", "uno:A3", "gold", [ "v169.97", "h-265.62" ] ],
+      [ "joystick1:HORZ", "uno:A2", "orange", [ "v174.54", "h-3.75" ] ]
+    ],
+    "dependencies": {}
+  }
